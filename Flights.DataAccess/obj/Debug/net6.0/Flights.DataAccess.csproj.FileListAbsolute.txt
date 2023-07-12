@@ -1,0 +1,17 @@
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flights.DataAccess.deps.json
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flights.DataAccess.dll
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flights.DataAccess.pdb
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flight.Entities.dll
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flights.Utils.dll
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flight.Entities.pdb
+D:\Pruebas\FlightsSolution\Flights.DataAccess\bin\Debug\net6.0\Flights.Utils.pdb
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.csproj.AssemblyReference.cache
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.AssemblyInfoInputs.cache
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.AssemblyInfo.cs
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.csproj.CoreCompileInputs.cache
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.csproj.CopyComplete
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.dll
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\refint\Flights.DataAccess.dll
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\Flights.DataAccess.pdb
+D:\Pruebas\FlightsSolution\Flights.DataAccess\obj\Debug\net6.0\ref\Flights.DataAccess.dll

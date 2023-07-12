@@ -1,0 +1,12 @@
+D:\Pruebas\FlightsSolution\Flights.Utils\bin\Debug\net6.0\Flights.Utils.deps.json
+D:\Pruebas\FlightsSolution\Flights.Utils\bin\Debug\net6.0\Flights.Utils.dll
+D:\Pruebas\FlightsSolution\Flights.Utils\bin\Debug\net6.0\Flights.Utils.pdb
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.csproj.AssemblyReference.cache
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.AssemblyInfoInputs.cache
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.AssemblyInfo.cs
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.csproj.CoreCompileInputs.cache
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.dll
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\refint\Flights.Utils.dll
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\Flights.Utils.pdb
+D:\Pruebas\FlightsSolution\Flights.Utils\obj\Debug\net6.0\ref\Flights.Utils.dll
