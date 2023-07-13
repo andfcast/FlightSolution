@@ -1,7 +1,7 @@
-import { FLght } from './flght';
+import { Flight } from './flight';
 
-describe('FLght', () => {
+describe('Flight', () => {
   it('should create an instance', () => {
-    expect(new FLght()).toBeTruthy();
+    expect(new Flight()).toBeTruthy();
   });
 });

@@ -1,26 +1,133 @@
-<h1>FLIGHT SEARCH</h1>
-<form formGroup]="searchForm" (ngSubmit)="Search()">
-  <div class="row">
-    <div class="col-md-3">
-      <mat-form-field appearance="outline" style="width:100%">
-        <mat-label>Select your origin city</mat-label>
-        <input matInput autocomplete="off" type="text" maxlength="3" formControlName="origin" id="origin" oninput="this.value = this.value.toUpperCase()">
-        <mat-error *ngIf="searchForm.get('origin')?.touched && searchForm.get('origin')?.errors?.['required']">                           
-          The origin city code is required                        
-        </mat-error>
-      </mat-form-field>      
+<div class="main-title">
+  <h1 class="title">FLIGHT SEARCH</h1>
+</div>
+<div class="search">
+  <form [formGroup]="searchForm" (ngSubmit)="Search()">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" style="width:100%">
+          <mat-label>Select your origin city</mat-label>
+          <input matInput autocomplete="off" type="text" maxlength="3" formControlName="origin" id="origin" oninput="this.value = this.value.toUpperCase()">
+          <mat-error *ngIf="searchForm.get('origin')?.touched && searchForm.get('origin')?.errors?.['required']">                           
+            The origin city code is required                        
+          </mat-error>
+        </mat-form-field>      
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" style="width:100%">
+          <mat-label>Select your destination city</mat-label>
+          <input matInput autocomplete="off" type="text" maxlength="3" formControlName="destination" id="destination" oninput="this.value = this.value.toUpperCase()">
+          <mat-error *ngIf="searchForm.get('destination')?.touched && searchForm.get('destination')?.errors?.['required']">                           
+            The destination city code is required                        
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-1">
+        <button type="submit" mat-raised-button color="accent" [disabled]="searchForm.invalid" style="justify-content: flex-end;">Search</button>
+      </div>
+      <div class="col-md-1">
+        <button type="button" mat-raised-button color="accent" style="justify-content: flex-end;" (click)="Clear()">Clear</button>
+      </div>
+      <div class="col-2"></div>
     </div>
-    <div class="col-md-3">
-      <mat-form-field appearance="outline" style="width:100%">
-        <mat-label>Select your origin city</mat-label>
-        <input matInput autocomplete="off" type="text" maxlength="3" formControlName="destination" id="destination" oninput="this.value = this.value.toUpperCase()">
-        <mat-error *ngIf="searchForm.get('destination')?.touched && searchForm.get('destination')?.errors?.['required']">                           
-          The destinatior city code is required                        
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-2">
-      <button type="submit" mat-raised-button color="accent" [disabled]="searchForm.invalid" style="justify-content: flex-end;">Search</button>
-    </div>
-  </div>
-</form>
+  </form>
+</div>
+
+<br />
+<div style="width:100%" *ngIf="isValid">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Search Results</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <br />
+    <br />
+    <mat-card-content>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h2>Basic information</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-1">
+              <mat-icon>my_location</mat-icon>
+            </div>
+            <div class="col-md-2">
+              <mat-label>Origin</mat-label>
+              <h2>{{journey.origin}}</h2>
+            </div>
+            <div class="col-md-3">
+              <mat-label>Destination</mat-label>
+              <h2>{{journey.destination}}</h2>
+            </div>
+            <div class="col-md-3">
+              <mat-label>Price</mat-label>
+              <h2>{{ (journey.price) * currencyFactor }} {{selectedCurrency}}</h2>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline" style="width:100%">
+                <mat-label>Currency</mat-label>
+                <mat-select [(value)]="selectedCurrency"(selectionChange)="onCurrencyChange($event)">
+                  <mat-option value='USD'>
+                    U.S. Dollar
+                  </mat-option>
+                  <mat-option value="COP">
+                    Colombian Peso
+                  </mat-option>
+                  <mat-option value="EUR">
+                    Euro
+                  </mat-option>
+                  <mat-option value="GBP">
+                    British Pound Sterling
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>              
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>      
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Flights</h2>
+        </div>
+      </div>
+      <br />
+      <div class="row" >
+        <div class="col-md-12" *ngFor="let item of journey.flights">
+          <mat-card class="inner-flight">
+            <mat-card-content>
+              <div class="row">
+                <div class="col-md-1">
+                  <mat-icon>flight</mat-icon>
+                </div>
+                <div class="col-md-2">
+                  <mat-label>Origin</mat-label>
+                  <h2>{{item.origin}}</h2>
+                </div>
+                <div class="col-md-3">
+                  <mat-label>Destination</mat-label>
+                  <h2>{{item.destination}}</h2>
+                </div>
+                <div class="col-md-3">
+                  <mat-label>Flight Carrier</mat-label>
+                  <h2>{{item.transport.flightCarrier}}</h2>
+                </div>
+                <div class="col-md-3">
+                  <mat-label>Flight Number</mat-label>
+                  <h2>{{item.transport.flightNumber}}</h2>
+                </div>
+              </div>              
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <br /><br />
+      </div>
+      <br /><br />
+    </mat-card-content>
+  </mat-card>
+</div>

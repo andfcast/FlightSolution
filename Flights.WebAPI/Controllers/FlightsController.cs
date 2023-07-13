@@ -14,13 +14,7 @@ namespace Flights.WebAPI.Controllers
 
         public FlightsController(IFlightBL flightBL) {
             _flightBL = flightBL;
-        }
-        // GET: api/<FlightsController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }        
+        }               
 
         // POST api/<FlightsController>
         [HttpPost]

@@ -74,8 +74,8 @@ namespace Flights.BusinessLogic.Implementation
                     {                        
                         objJourney.Flights.Add(new Flight.Entities.Flight
                         {
-                            Origin = request.Origin,
-                            Destination = request.Destination,
+                            Origin = item.DepartureStation,
+                            Destination = item.ArrivalStation,
                             Price = item.Price,
                             Transport = new Transport
                             {
@@ -85,38 +85,9 @@ namespace Flights.BusinessLogic.Implementation
                         });
                         objJourney.Price += item.Price;
                     }
-                }
-                else { 
-                    
-                }
-
+                }                
             }
             return objJourney;
         }
-
-        //private string[] funcionPrueba(string origin, string destination, List<FlightServiceReponse> lstFlights)
-        //{
-        //    string originAux = origin;
-        //    string destinationAux = string.Empty;
-        //    List<FlightNode> lstNodes = new List<FlightNode>();
-        //    foreach (var item in lstFlights) {
-        //        lstNodes.Add(new FlightNode
-        //        {
-        //            Origin = item.DepartureStation,
-        //            Destination = item.ArrivalStation,
-        //            Price = item.Price,
-        //            Checked = false
-        //        });
-        //    }
-        //    foreach(var item in lstNodes.Where(x => x.Origin == originAux)) {
-        //        if (item.Destination != destination) {
-        //            originAux = item.Destination;
-        //        }    
-            
-        //    }
-        //    List<FlightServiceReponse> nodesOrigin = lstFlights.Where(x => x.DepartureStation == origin).ToList();
-        //    string trip = origin;
-        //    while
-        //}
     }
 }

@@ -16,13 +16,19 @@ namespace Flights.DataAccess.Implementation
         public List<FlightServiceReponse> Search(FlightRequest request) {
             string serviceUrl = _configuration["AppSettings:MainService"];
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.GetAsync(serviceUrl).Result;
-            List<FlightServiceReponse> lstFlights = new List<FlightServiceReponse>();
-            if (response.IsSuccessStatusCode) {
-                lstFlights = JsonConvert.DeserializeObject<List<FlightServiceReponse>>(response.Content.ReadAsStringAsync().Result)!;
+            try
+            {
+                HttpResponseMessage response = client.GetAsync(serviceUrl).Result;
+                List<FlightServiceReponse> lstFlights = new List<FlightServiceReponse>();
+                if (response.IsSuccessStatusCode)
+                {
+                    lstFlights = JsonConvert.DeserializeObject<List<FlightServiceReponse>>(response.Content.ReadAsStringAsync().Result)!;
+                }
+                return lstFlights;
             }
-            return lstFlights;
-
+            catch (Exception) {
+                return null;
+            }            
         }
     }
 }
