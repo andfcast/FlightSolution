@@ -1,0 +1,26 @@
+<h1>FLIGHT SEARCH</h1>
+<form formGroup]="searchForm" (ngSubmit)="Search()">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>Select your origin city</mat-label>
+        <input matInput autocomplete="off" type="text" maxlength="3" formControlName="origin" id="origin" oninput="this.value = this.value.toUpperCase()">
+        <mat-error *ngIf="searchForm.get('origin')?.touched && searchForm.get('origin')?.errors?.['required']">                           
+          The origin city code is required                        
+        </mat-error>
+      </mat-form-field>      
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>Select your origin city</mat-label>
+        <input matInput autocomplete="off" type="text" maxlength="3" formControlName="destination" id="destination" oninput="this.value = this.value.toUpperCase()">
+        <mat-error *ngIf="searchForm.get('destination')?.touched && searchForm.get('destination')?.errors?.['required']">                           
+          The destinatior city code is required                        
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" mat-raised-button color="accent" [disabled]="searchForm.invalid" style="justify-content: flex-end;">Search</button>
+    </div>
+  </div>
+</form>
